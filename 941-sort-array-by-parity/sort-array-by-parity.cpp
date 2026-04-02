@@ -1,17 +1,17 @@
 class Solution {
 public:
    vector<int> sortArrayByParity(vector<int>& nums) {
-    int left = 0, right = nums.size() - 1;
+    int i = 0, j = nums.size() - 1;
 
-    while (left < right) {
-        if (nums[left] % 2 > nums[right] % 2) {
-            swap(nums[left], nums[right]);
+    while (i< j) {
+        if (nums[i] % 2 > nums[j] % 2) {
+            swap(nums[i], nums[j]);
         }
 
-        if (nums[left] % 2 == 0) left++;
-        if (nums[right] % 2 == 1) right--;
+        if (nums[i] % 2 == 0) i++;
+        if (nums[j] % 2 == 1) j--;
     }
-
+ 
     return nums;
 }
 };
